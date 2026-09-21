@@ -15,10 +15,19 @@ run/main_scene="uid://cr1el0l2ebl8e"
 config/features=PackedStringArray("4.7", "Mobile")
 config/icon="res://icon.svg"
 
+[autoload]
+
+EventController="*uid://blox6cflfxpyx"
+GameController="*uid://clynpa1hl5mbr"
+
 [display]
 
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg")
 
 [input]
 
