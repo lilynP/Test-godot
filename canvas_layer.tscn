@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://f6ltmu10jspn"]
+
+[ext_resource type="Script" uid="uid://o4qdu3yshgjq" path="res://coinui.gd" id="1_tg4cr"]
+[ext_resource type="Texture2D" uid="uid://b6gn4rcdfug7b" path="res://spritesheet.png" id="1_v2lfg"]
+[ext_resource type="Script" uid="uid://cyj1woa4yt4gu" path="res://label.gd" id="2_37rai"]
+
+[node name="papaUI" type="Control" unique_id=619596927]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -18.0
+offset_top = -3.0
+offset_right = 62.0
+offset_bottom = 70.0
+script = ExtResource("1_tg4cr")
+
+[node name="Label" type="Label" parent="." unique_id=1786830885]
+layout_mode = 0
+offset_left = 130.0
+offset_top = 60.0
+offset_right = 186.0
+offset_bottom = 108.0
+theme_override_font_sizes/font_size = 32
+text = "0"
+script = ExtResource("2_37rai")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1749197594]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 30.0
+offset_right = 247.0
+offset_bottom = 219.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_v2lfg")
+expand_mode = 1
+stretch_mode = 1

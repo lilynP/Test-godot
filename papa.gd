@@ -1,7 +1,7 @@
 extends Node
 @export var value: int = 1 # Your coin value if you have one
 
-
+signal coin_collected
 func _on_area_2d_body_entered(body: Node) -> void:
 	if body is CharacterBody2D:
 		GameController.coin_collected(value)
@@ -12,6 +12,8 @@ func _on_area_2d_body_entered(body: Node) -> void:
 			
 		if has_node("Area2D/CollisionShape2D"):
 			get_node("Area2D/CollisionShape2D").set_deferred("disabled", true)
+		
+		
 		
 		# 2. Find and play the sound safely without needing variables at the top
 		var tf2_player = get_node("Tf2Player")

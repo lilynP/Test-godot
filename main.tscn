@@ -10,6 +10,9 @@
 [ext_resource type="Script" uid="uid://dnd4dmv884w4t" path="res://animated_sprite_2d.gd" id="8_4c57u"]
 [ext_resource type="AudioStream" uid="uid://of77t2uihkr8" path="res://tf2.mp3" id="8_5vw27"]
 [ext_resource type="Script" uid="uid://cub1fv4cn1nwc" path="res://area_2d.gd" id="8_kek77"]
+[ext_resource type="PackedScene" uid="uid://f6ltmu10jspn" path="res://canvas_layer.tscn" id="11_efxa6"]
+[ext_resource type="PackedScene" uid="uid://dsxg4agf7y53k" path="res://scripts/game_won.tscn" id="12_dg77c"]
+[ext_resource type="AudioStream" uid="uid://begyo8gm2mxft" path="res://ncs.mp3" id="13_ycdy4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g78fw"]
 size = Vector2(45, 61)
@@ -457,12 +460,23 @@ autoplay = "spin"
 script = ExtResource("8_4c57u")
 
 [node name="Area2D" type="Area2D" parent="papa6" unique_id=609128992]
-position = Vector2(-1, -6)
+position = Vector2(0, 2)
 script = ExtResource("8_kek77")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="papa6/Area2D" unique_id=1465519803]
 position = Vector2(3099, -488)
 shape = SubResource("CircleShape2D_hx316")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=285896109]
+
+[node name="papaUI" parent="CanvasLayer" unique_id=619596927 instance=ExtResource("11_efxa6")]
+
+[node name="GameWon" parent="." unique_id=1447430118 instance=ExtResource("12_dg77c")]
+visible = false
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="GameWon" unique_id=36124652]
+stream = ExtResource("13_ycdy4")
+autoplay = true
 
 [connection signal="body_entered" from="papa/Area2D" to="papa" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="papa2/Area2D" to="papa2" method="_on_area_2d_body_entered"]
